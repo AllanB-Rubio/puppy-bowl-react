@@ -37,8 +37,6 @@ export function NewPlayerForm() {
         setStatus("");
 
         setPlayers([...players, newPlayer]);
-
-
       } else {
         console.error(
           "Failed to add player. Server responded with status:",
@@ -55,9 +53,9 @@ export function NewPlayerForm() {
   };
 
   return (
-    <div>
+    <nav className="form-navbar">
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
+        {/* <label>Name:</label> */}
         <input
           type="text"
           required
@@ -68,7 +66,7 @@ export function NewPlayerForm() {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <label>Breed:</label>
+        {/* <label>Breed:</label> */}
         <input
           type="text"
           required
@@ -89,7 +87,7 @@ export function NewPlayerForm() {
           <option value="field">Field</option>
         </select>
 
-        <label>Image URL:</label>
+        {/* <label>Image URL:</label> */}
         <input
           type="text"
           id="imageUrl"
@@ -111,6 +109,6 @@ export function NewPlayerForm() {
           />
         ))}
       </div>
-    </div>
+    </nav>
   );
 }

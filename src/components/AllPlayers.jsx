@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PlayerCard from "./PlayerCard";
 import { fetchAllPlayers } from "../API";
 
+
 const cohortCode = "2401-FTB-MT-WEB-PT";
 const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortCode}`;
 
@@ -15,6 +16,7 @@ function AllPlayers() {
         const playersData = await fetchAllPlayers();
         setPlayers(playersData);
         setFilteredPlayers(playersData);
+
       } catch (error) {
         console.error("Error fetching players:", error);
       }
@@ -46,9 +48,10 @@ function AllPlayers() {
 
   return (
     <>
-      <form>
-        <input onChange={handleInputChange} placeholder="Search by name" />
-      </form>
+        <nav className="navbar-search">
+      <input onChange={handleInputChange} placeholder="Search by name" />
+        </nav>
+
       {filteredPlayers.map((player) => (
         <PlayerCard
           key={player.id}

@@ -28,23 +28,94 @@ h1 {
   line-height: 1.1;
 }
 
+.form-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #4f4f4f6a;
+  color: #fff;
+  padding: 10px 10px;
+}
+
+.form-navbar form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-navbar label {
+  margin-right: 10px;
+}
+
+.form-navbar input,
+.form-navbar select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-navbar button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #535bf2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-navbar button:hover {
+  background-color: #434343;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a00;
+  background-color: #4f4f4f6a;
+  color: #fff;
+  padding: 10px 10px;}
+
+.navbar-search input {
+  flex: 1; /* Let the input expand to fill available space */
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  background-color: #ffffffc8; /* Set background color to white */
+  color: #1a1a1a; /* Set text color to match background */
+  text-align: center; /* Center the text horizontally */
+}
+
+.navbar-search input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #535bf2;
+}
+
+
+
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border: none;
+  padding: 12px 24px; /* Increased padding for better button size */
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: #535bf2;
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+  /* Adjusting the border-color to match the hover effect */
+  border-color: #535bf2;
 }
 
 @media (prefers-color-scheme: light) {
@@ -61,21 +132,33 @@ button:focus-visible {
 }
 
 .PlayerCard {
-  display: inline-block;
-  margin: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #3f404297;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 10px;
-  width: 250px;
-  height: 300px;
-  vertical-align: top;
+  width: 500px; 
+  height: auto; 
+  max-width: 300px;
+  flex: 1 1 auto;
 }
 
+.PlayerCard-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 10px; /* Adjusted padding top */
+  padding-bottom: 10px; /* Adjusted padding bottom */
+}
+
+
+
 .PlayerCard img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  width: 100%; /* Ensure image fills its container */
+  height: 200px; /* Set fixed height for the image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10px; /* Apply border-radius to match the card */
 }
 
 .PlayerCards {
